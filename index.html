@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canvas</title>
+  <style>
+    *{
+      box-sizing: border-box;
+    }
+    body{
+      color: orange; 
+    }
+    canvas{
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <h1>Canvas</h1>
+
+  <h2>Draw a line</h2>
+  <canvas id="rect" width="200" height="100"></canvas>
+
+  <h2>Draw a circle</h2>
+  <canvas id="circle" width="200" height="100"></canvas>
+
+  <h2>Draw a text</h2>
+  <canvas id="text" width="200" height="100"></canvas>
+
+  <h2>Draw a stroke text</h2>
+  <canvas id="strokeText" width="200" height="100"></canvas>
+  <script>
+
+    // draw a rectangle
+    var c = document.getElementById("rect");
+    var ctx = c.getContext("2d");
+    ctx.moveTo(0,0);
+    ctx.lineTo(200,100);
+    ctx.stroke();
+
+    // draw a circle
+    var a = document.getElementById("circle");
+    var atx = a.getContext("2d");
+    atx.beginPath();
+    atx.arc(95 , 50 , 40 , 0 ,2*Math.PI);
+    atx.stroke();
+
+    // draw a text
+    var b = document.getElementById("text");
+    var btx = b.getContext("2d");
+    btx.font = "30px Arial";
+    btx.fillText("Hello world" , 10 , 50);
+
+    // draw a stroke text
+    var d = document.getElementById("strokeText");
+    var dtx = d.getContext("2d");
+    dtx.font = "30px Arial";
+    dtx.strokeText("Hello world" , 10 , 50);
+
+  </script>
+</body>
+</html>
